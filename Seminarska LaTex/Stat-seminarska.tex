@@ -58,7 +58,7 @@
 \thispagestyle{empty}
 
 \par
-Seminarska naloga iz statistike pri predmetu statistika na Fakulteti za matematiko in fiziko v Ljubljani v študijskem letu 2020/21. Celoten repozitorij seminarske naloge, ki vključuje skripte in izračune, najdemo na naslovu:
+Seminarska naloga iz statistike pri predmetu statistika na Fakulteti za matematiko in fiziko v Ljubljani v študijskem letu 2020/21. Celoten repozitorij seminarske naloge, ki vključuje skripte in izračune, najdemo na spletnem naslovu:
 \begin{center}
     \url{https://github.com/kazi99/STAT-seminarska} 
 \end{center}
@@ -177,7 +177,7 @@ Intervale zaupanja prikažemo tudi grafično.
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{intervali_zaupanja.pdf}
-    \caption{$95\%$ intervali zaupanja}
+    \caption{$95\%$ intervali zaupanja.}
 \end{figure}
 
 Zaključimo lahko, da je v tem primeru bilo bolj ugodno stratificirati po četrtih, saj smo tako dobili ožje intevale zaupanja, kar nam bo omogočilo postaviti bolj natančne ocene povprečnega dohodka v Kibergradu. 
@@ -328,9 +328,9 @@ za poljuben $k \in \Z$. Na podlagi tako definirane porazdelitve slučajne spreme
 \[
     \Lambda = \prod_{i = 1}^n \left(\frac{\olsi{X}}{X_i}\right)^{X_i} \left( \frac{5 - \olsi{X}}{5 - X_i}\right)^{5 - X_i},
 \]
-kjer je $\olsi{X} = \sumin X_i/n$ vzorčno povprečje. Na našem vzorcu ta zavzame vrednost $\lambda_{stat} = 3,02 \cdot 10^{-97}$.
+kjer je $\olsi{X} = \sumin X_i/n$ vzorčno povprečje. Na našem vzorcu testna statistika zavzame vrednost $\lambda_{stat} = 3,02 \cdot 10^{-97}$.
 
-Test pokaže, da so prav vse vrednosti testne statistike na $10.000$ simuliranih vzorcih vedno večje od tiste izračunane na naših konkretnih podatkih, torej bomo ničelno hipotezo, da imajo vse palice zlome porazdeljene binomsko z enakimi parametri, zavrgli.
+Test pokaže, da so prav vse vrednosti testne statistike na $10.000$ simuliranih vzorcih vedno večje od $\lambda_{stat}$ izračunane na naših konkretnih podatkih, torej bomo ničelno hipotezo, da imajo vse palice zlome porazdeljene binomsko z enakimi parametri, s $p$-vrednostjo $0$ zavrgli.
 
 Skripto, ki spada k tej nalogi, najdemo v datoteki \texttt{naloga\_2.ipynb}.
 
@@ -385,7 +385,7 @@ kjer je $t_{stat}$ vrednost statistične spremenljivke na naših podatkih, $T \s
     \begin{center}
         \includegraphics[scale=0.65]{pulz_vadba.pdf}
         \caption{
-            Sprememba pulza v odvisnosti od prvo izmerjenega pulza
+            Sprememba pulza v odvisnosti od prvo izmerjenega pulza.
             }
         \label{Sprememba pulza v odvisnosti od prvo izmerjenega pulza}
     \end{center}
@@ -395,7 +395,7 @@ kjer je $t_{stat}$ vrednost statistične spremenljivke na naših podatkih, $T \s
 \textbf{c)} Najprej testirajmo, če so vzorčne variance vseh treh skupin enake -- homoskedastičnost (homogenost variance). V primeru da so, bomo uporabili analizo variance -- krajše ANOVA -- za preizkušanje domneve ali so povprečja po skupinah enaka. 
 \newline
 
-Homogenost variance bomo testirali z Levenovim testom, ki je v resnici zgolj modifikacija testa ANOVA, zato si najprej poglejmo kako deluje ta. Glavni cilj analize variance je ugotoviti ali se povprečja po skupinah med sabo statistično razlikujejo ali ne. Recimo, da imamo dnih $n$ vzorecev $Y_{ij}$, za $1 \leq j \leq n_i$, $1 \leq i \leq k$ razdeljenih na $k$ skupin, kjer vsaka skupina vsebuje $n_i$ vzorcev. Z $\ols{Y}_{i\cdot}$ označimo povprečje znotraj $i$-te skupine, $\ols{Y}$ pa naj bo vzorčno povprečje vseh podatkov. Osnovna ideja tega testa bo razmerje variabilnosti vzorca med skupinami in variabilnosti vzorca v skupinah samih. Natančneje definirajmo 
+Homogenost variance bomo testirali z Levenovim testom, ki je v resnici zgolj modifikacija testa ANOVA, zato si najprej poglejmo kako deluje ta. Glavni cilj analize variance je ugotoviti ali se povprečja po skupinah med sabo statistično razlikujejo ali ne. Recimo, da imamo danih $n$ vzorecev $Y_{ij}$, za $1 \leq j \leq n_i$, $1 \leq i \leq k$ razdeljenih na $k$ skupin, kjer vsaka skupina vsebuje $n_i$ vzorcev. Z $\ols{Y}_{i\cdot}$ označimo povprečje znotraj $i$-te skupine, $\ols{Y}$ pa naj bo vzorčno povprečje vseh podatkov. Osnovna ideja tega testa bo pogledati razmerje variabilnosti vzorca med skupinami in variabilnosti vzorca v skupinah samih. Natančneje definirajmo 
 \[
     \sigma^2_B = \sum_{i = 1}^k \frac{n_i (\ols{Y}_{i \cdot} - \ols{Y})^2}{k-1},
 \]
@@ -432,7 +432,7 @@ S $p$-vrednostjo $0,660$, lahko po Levenovem testu sklepamo, da imajo tri skupin
     \begin{center}
         \includegraphics[scale=0.7]{varianca_vadba.pdf}
         \caption{
-            Razpršenost spremembe pulza po skupinah glede na vadbo
+            Razpršenost spremembe pulza po skupinah glede na vadbo.
             }
         \label{Razprsenost spremembe pulza po skupinah glede na vadbo}
     \end{center}
@@ -451,6 +451,8 @@ Z drugimi besedami, bi bilo smiselno za ničelno hipotezo vzeti $H_0 : \mu_1 = \
 \end{itemize}
 
 Vidimo, da je $p$-vrednost $0,907$ precej velika, kar pomeni, da bi vsaj tako ekstremen rezulat, kot je naš, dobili dokaj pogosto -- naš vzorec torej ni preveč ekstremen. Na podlagi tega testa lahko tako statistično sklepamo, da je ničelna hipoteza resnična, kar pomeni, da vadba nima vpliva na spremembo pulza pri študentih z obrmenitvijo.
+
+Skripto za izračune in analizo zadnje naloge najdemo v datoteki \linebreak \texttt{naloga\_3.ipynb}.
 
 \begin{thebibliography}{99}
 
