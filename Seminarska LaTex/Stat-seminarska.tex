@@ -90,7 +90,7 @@ njena nepristranska cenilka, torej standardno napako ($\se$) lahko ocenimo z
 \]
 Izračunana na našem vzorcu je ocena standardne napake enaka $1758,62$.
 
-Sedaj imamo zbrane vse podatke, da postavimo $95\%$ interval zaupanja. Stopnja tveganja bo $\alpha = 0,05$, kar pomeni, da bo s takšno verjetnostjo interval zaupanja lahko zgrešil dejansko populacijsko statistiko, ki jo ocenjujemo. Ker imamo opravka z veliko ($400$ -- velikost vzorca) enako porazdeljenimi (porazdelitev je empirična) slučajnimi spremenljivkami, lahko zaradi centralnega limitnega izreka predpostavljamo, da je vzorčno povprečje $\olsi{X}$ porazdeljeno približno normalno. Opomnimo še, da te slučajne spremenljivke niso nujno neodvisne, je pa njihova koreliranost razmeroma majhna pri tako veliki populaciji kot je naša, zato je uporaba izreka nekoliko bolj utemeljena. 
+Sedaj imamo zbrane vse podatke, da postavimo $95\%$ interval zaupanja. Stopnja tveganja bo $\alpha = 0,05$ in to je verjetnost, da populacijska statistika (na primer povprečni dohodek) ni vsebovana v našem intervalu zaupanja, ki je slučajna množica. Opravka imamo z veliko ($400$ je velikost vzorca) enako porazdeljenimi (porazdelitev je empirična) slučajnimi spremenljivkami, zato lahko zaradi centralnega limitnega izreka predpostavljamo, da je vzorčno povprečje $\olsi{X}$ porazdeljeno približno normalno. Opomnimo še, da te slučajne spremenljivke niso nujno neodvisne, je pa njihova koreliranost razmeroma majhna pri tako veliki populaciji kot je naša, zato je uporaba izreka nekoliko bolj utemeljena. 
 
 Držimo se standardnih oznak in označimo s $\Phi$ kumulativno porazdelitveno funkcijo standardne normalne porazdelitve
 \[
@@ -161,7 +161,7 @@ Naslednji je aproksimativni interval zaupanja, kjer uporabimo oceno za standardn
     \left(\olsi{X}_s - \hat{\se}_s \cdot \Phi\inv\left(1 - \frac{\alpha}{2}\right), 
     \olsi{X} + \hat{\se}_s \cdot \Phi\inv\left(1 - \frac{\alpha}{2}\right)\right), 
 \]
-ki bo pri naših podatkih $\left(35931,97; 41480,80\right)$ dolžine $5548,84$, kar je pravtako krajše kot interval \eqref{aproksimativni IZ} in tako boljše kot če ne bi stratificirali.
+ki bo pri naših podatkih $\left(35931,97; 41480,80\right)$ dolžine $5548,84$, kar je pravtako krajše kot interval \eqref{aproksimativni IZ} in tako boljše, kot če ne bi stratificirali.
 
 Nazadnje lahko postavimo še Studentov interval zaupanja za ocenejevanje povprečja, pred tem pa moramo izračunati prostostne stopnje
 \[
@@ -201,7 +201,7 @@ kjer je slučajna spremenljivka $X$ porazdeljena binomsko $\bin(5,p)$. \emph{Ver
 \[
     L(p; x_1, \ldots, x_n) = \prod_{i = 1}^n L_1(p; x) = \prod_{i = 1}^n \binom{5}{x_i}p^{x_i}(1-p)^{5 - x_i}.
 \]
-Cenilka za $p$ bo torej tisti parameter, pri katerem je verjetje maksimalno. Ker je verjertje gladko odvisno od parametra $p \in (0,1)$ bomo ta ekstrem poiskali z odvodom, da bo računanje lažje pa si bomo pomagali z logaritmom verjetja
+Cenilka za $p$ po metodi največjega verjetja bo torej tisti parameter, pri katerem je verjetje maksimalno. Ker je verjertje gladko odvisno od parametra $p \in (0,1)$ bomo ta ekstrem poiskali z odvodom, da bo računanje lažje, pa si bomo pomagali z logaritmom verjetja
 \begin{multline*}
     \ell(p; x_1, \ldots, x_n) := 
     \log L(p; x_1, \ldots, x_n) \\ 
@@ -213,7 +213,7 @@ Z odvajanjem $\ell$ po $p$ dobimo
     \sumin \left( \frac{x_i}{p} - \frac{5 - x_i}{1 - p}\right) = 
     \sumin \frac{x_i - 5p}{p - p^2}.
 \]
-Ta odvod bo enak $0$ natanko tedaj, ko je $p = \frac{1}{5n} \sumin x_i$. Za vse $p \in (0,1)$ je $L(p; x_1, \ldots, x_n) > 0$ poleg tega pa velja
+Ta odvod bo enak $0$ natanko tedaj, ko je $p = \frac{1}{5n} \sumin x_i$. Za vse $p \in (0,1)$ je $L(p; x_1, \ldots, x_n) > 0$, poleg tega pa velja
 \[
     \lim_{p \downarrow  0} L(p; x_1, \ldots, x_n) = 0 \quad \text{ in } \quad 
     \lim_{p \uparrow  1} L(p; x_1, \ldots, x_n) = 0,
