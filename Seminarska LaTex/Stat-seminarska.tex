@@ -16,6 +16,7 @@
 \usepackage{bm}
 \usepackage{physics}
 \usepackage{icomma}
+\usepackage{hyperref}
 % \usepackage[showframe]{geometry}
 
 \graphicspath{ {./images/}}
@@ -50,7 +51,7 @@
 
 \begin{document}
     
-\author{\textbf{Izak Jenko}}
+\author{\Large{\textbf{Izak Jenko}}}
 \title{SEMINARSKA NALOGA IZ STATISTIKE}
 \date{22. avgust 2021}
 
@@ -310,7 +311,9 @@ Nazadnje je razmerje verjetji
     \left(\frac{m_j}{x_j} \frac{\sumin x_i}{\sumin m_i}\right)^{x_j}
     \left(\frac{m_j}{m_j - x_j}\frac{\sumin(m_i - x_i)}{\sumin m_i}\right)^{m_j - x_j}.
 \end{align*}
-Porazdelitev te testne statistike je povsem neočitna in izkaže se, da si ne moremo niti pomagati z Wilksovim izrekom, zato izberemo drugačno pot. Simuliramo veliko vzorcev, recimo $N = 10.000$, iz porazdelitve pod ničelno hipotezo, na njih izvrednotimo testno statistiko, in potem na podlagi tega definiramo porazdelitev s pomočjo histograma. Realno os razdelimo na intervale širine 
+Porazdelitev te testne statistike je povsem neočitna in izkaže se, da si ne moremo niti pomagati z Wilksovim izrekom. saj za nekatere vzorce $\bm{x}$ funkcija $\bm{p}\mapsto L(\bm{p}; \bm{x})$ ni injektivna kot zahteva \cite[Theorem 1]{Ginestet}.
+
+Zaradi tega izberemo drugačno pot. Simuliramo veliko vzorcev, recimo $N = 10.000$, iz porazdelitve pod ničelno hipotezo, na njih izvrednotimo testno statistiko, in potem na podlagi tega definiramo porazdelitev s pomočjo histograma. Realno os razdelimo na intervale širine 
 \[
     \delta = \hat{\sigma} \sqrt[3]{\frac{24\sqrt{\pi}}{N}} \quad \text{ po Scottovem pravilu},
 \]  
@@ -458,7 +461,10 @@ Skripto za izračune in analizo zadnje naloge najdemo v datoteki \linebreak \tex
 \begin{thebibliography}{99}
 
     \bibitem{Rice}
-    J.~Rice, \emph{Mathematical statistics \& data analysis}, third edition, Duxbury, 2007
+    J.~Rice, \emph{Mathematical statistics \& data analysis}, third edition, Duxbury, 2007.
+
+    \bibitem{Ginestet}
+    C.~E.~Ginestet, \emph{MA 782 Hypothesis Testing: Consistency and Normality of MLE}, [ogled 21.~8.~2021], dostopno na \url{http://math.bu.edu/people/cgineste/classes/ma782/p/w1_1.pdf}.
 
     \bibitem{Welch}
     \emph{Welch's $t$-test}, v: Wikipedia, The Free Encyclopedia, [ogled 21.~8.~2021], dostopno na \url{https://en.wikipedia.org/wiki/Welch%27s_t-test}.
