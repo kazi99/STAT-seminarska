@@ -89,11 +89,11 @@ njena nepristranska cenilka, torej standardno napako ($\se$) lahko ocenimo z
 \]
 Izračunana na našem vzorcu je ocena standardne napake enaka $1758,62$.
 
-Sedaj imamo zbrane vse podatke, da postavimo $95\%$ interval zaupanja. Stopnja tveganja bo $\alpha = 0,05$, kar pomeni, da bo s priblično takšno verjetnostjo interval zaupanja zgrešil dejansko populacijsko statistiko, ki jo ocenjujemo. Ker imamo opravka z veliko ($400$ -- velikost vzorca) enako porazdeljenimi (porazdelitev je empirična) slučajnimi spremenljivkami, lahko zaradi centralnega limitnega izreka predpostavljamo, da je vzorčno povprečje $\olsi{X}$ porazdeljeno približno normalno. Opomnimo še, da te slučajne spremenljivke niso nujno neodvisne, je pa njihova koreliranost razmeroma majhna pri tako veliki populaciji kot je naša, zato je uporaba izreka nekoliko bolj utemeljena. 
+Sedaj imamo zbrane vse podatke, da postavimo $95\%$ interval zaupanja. Stopnja tveganja bo $\alpha = 0,05$, kar pomeni, da bo s takšno verjetnostjo interval zaupanja lahko zgrešil dejansko populacijsko statistiko, ki jo ocenjujemo. Ker imamo opravka z veliko ($400$ -- velikost vzorca) enako porazdeljenimi (porazdelitev je empirična) slučajnimi spremenljivkami, lahko zaradi centralnega limitnega izreka predpostavljamo, da je vzorčno povprečje $\olsi{X}$ porazdeljeno približno normalno. Opomnimo še, da te slučajne spremenljivke niso nujno neodvisne, je pa njihova koreliranost razmeroma majhna pri tako veliki populaciji kot je naša, zato je uporaba izreka nekoliko bolj utemeljena. 
 
 Držimo se standardnih oznak in označimo s $\Phi$ kumulativno porazdelitveno funkcijo standardne normalne porazdelitve
 \[
-    \Phi(x) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{x} e^{-z^2/2}dz.
+    \Phi(x) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{x} e^{-z^2/2}\,dz.
 \]
 Če bi poznali populacijsko varianco $\sigma^2$ in s tem standardno napako, bi dobili inteval zaupanja   
 \begin{equation}
@@ -101,9 +101,9 @@ Držimo se standardnih oznak in označimo s $\Phi$ kumulativno porazdelitveno fu
     \left(\olsi{X} - \se \Phi\inv\left(1 - \frac{\alpha}{2}\right), 
     \olsi{X} + \se \Phi\inv\left(1 - \frac{\alpha}{2}\right)\right).
 \end{equation}
-Kar pri našem vzorcu pride $\left( 39963,65; 46857,32\right)$ in je dolžine $6250,57$.
+Kar pri našem vzorcu pride $\left( 35581,54; 41832,12 \right)$ in je dolžine $6250,58$.
 
-Glede na to pa, da imamo tudi oceno standardne napake in recimo prave vrednosti standardne napake ne bi poznali, lahko postavimo tudi aproksimativni interval zaupanja oblike
+Glede na to, da imamo tudi oceno standardne napake in recimo prave vrednosti standardne napake ne bi poznali, lahko postavimo tudi aproksimativni interval zaupanja oblike
 \begin{equation}
     \label{aproksimativni IZ}
     \left(\olsi{X} - \hat{\se} \Phi\inv\left(1 - \frac{\alpha}{2}\right), 
@@ -153,7 +153,7 @@ Sedaj lahko podobno kot prej postavimo $95\%$ intervale zaupanja. Najprej če p
     \left(\olsi{X}_s - \se_s \cdot \Phi\inv\left(1 - \frac{\alpha}{2}\right), 
     \olsi{X} + \se_s \cdot \Phi\inv\left(1 - \frac{\alpha}{2}\right)\right).
 \] 
-Na našem vzorcu je to $\left(36604,38; 42106,27\right)$, ki je dolžine $6224,06$, kar pomeni, da je krajši kot interval \eqref{normalni IZ} in s tem tudi boljši za ocenejevanje povprečnega dohodka. 
+Na našem vzorcu je to $\left(35594,36; 41818,41 \right)$, ki je dolžine $6224,06$, kar pomeni, da je krajši kot interval \eqref{normalni IZ} in s tem tudi boljši za ocenejevanje povprečnega dohodka. 
 
 Naslednji je aproksimativni interval zaupanja, kjer uporabimo oceno za standardno napako $\hat{\se}_s$. Interval bo tedaj 
 \[
@@ -180,7 +180,7 @@ Intervale zaupanja prikažemo tudi grafično.
     \caption{$95\%$ intervali zaupanja.}
 \end{figure}
 
-Zaključimo lahko, da je v tem primeru bilo bolj ugodno stratificirati po četrtih, saj smo tako dobili ožje intevale zaupanja, kar nam bo omogočilo postaviti bolj natančne ocene povprečnega dohodka v Kibergradu. 
+Zaključimo lahko, da je v tem primeru bolj ugodno stratificirati po četrtih, saj smo tako dobili ožje intevale zaupanja, kar nam bo omogočilo postaviti bolj natančne ocene povprečnega dohodka v Kibergradu. 
 
 Do računskih razultatov pri tej nalogi smo prišli s pomočjo priloženih skript \texttt{naloga\_1a.ipynb} za točko a) in \texttt{naloga\_1b.ipynb} za točko b), ki analizirata isti enostaven slučajni vzorec $400$ enot (s proporcionalno alokacijo) iz datoteke \texttt{vzorec.csv}.
 
@@ -196,7 +196,7 @@ Imamo vzorec $280$ palic, kjer smo vsaki od njih preizkusili lomljivost na petih
 \[
     L_1(p; x) = \mathsf{P}_p(X = x) = \binom{5}{x}p^x(1-p)^{5 - x},
 \]
-kjer je slučajna spremenljivka $X$ porazdeljena binomsko $\bin(5,p)$. Verjetje bo tedaj funkcija
+kjer je slučajna spremenljivka $X$ porazdeljena binomsko $\bin(5,p)$. \emph{Verjetje} bo tedaj funkcija
 \[
     L(p; x_1, \ldots, x_n) = \prod_{i = 1}^n L_1(p; x) = \prod_{i = 1}^n \binom{5}{x_i}p^{x_i}(1-p)^{5 - x_i}.
 \]
@@ -267,7 +267,7 @@ Naj bosta $\Theta = (0,1)^n$ in $\Theta_0 = \{(p_1, \ldots, p_n) \in \Theta \mid
 \[
     \Lambda = \frac{\sup_{\bm{p} \in \Theta_0} L(\bm{p}; \bm{x})}{\sup_{\bm{p} \in \Theta} L(\bm{p}; \bm{x})},   
 \]
-za poljuben $\bm{x} \in \{0,1,\ldots, 5\}^n$, kjer imamo krajše zapisano $\bm{p} = (p_1, \ldots, p_n)$ in $\bm{x} = (x_1, \ldots, x_n)$. Označimo še 
+za poljuben $\bm{x} \in \prod_{i = 1}^n\{0,1,\ldots, m_i\}$, kjer imamo krajše zapisano $\bm{p} =$ \linebreak $(p_1, \ldots, p_n)$ in $\bm{x} = (x_1, \ldots, x_n)$. Označimo še 
 \begin{multline*}
     \ell(\bm{p}; \bm{x}) := 
     \log L(\bm{p}; \bm{x}) \\ = 
@@ -281,7 +281,7 @@ Lotimo se najprej računanja imenovalca razmerja verjetji $\sup_{\bm{p} \in \The
     \frac{x_j}{p_j} - \frac{m_i - x_i}{m_i - p_i} = 
     \frac{x_i - m_i p_i}{p_i(1 - p_i)} = 0
 \] 
-natanko tedaj, ko je $p_i = \frac{x_i}{m_i}$. S podobnim argumentiranjem kot pri točki a) lahko zaključimo, da $\ell(\bm{p}; \bm{x})$ oziroma ekvivalentno $L(\bm{p}; \bm{x})$ doseže maksimum v točki $\bm{p} = (\frac{x_1}{m_1}, \dots, \frac{x_n}{m_n}) \in \Theta$. Tedaj je torej 
+natanko tedaj, ko je $p_i = \frac{x_i}{m_i}$. S podobnim argumentiranjem kot pri točki a) lahko zaključimo, da $\ell(\bm{p}; \bm{x})$ oziroma ekvivalentno $L(\bm{p}; \bm{x})$ doseže maksimum v točki $\bm{p} = (\frac{x_1}{m_1}, \dots, \frac{x_n}{m_n}) \in \ols\Theta$, ki pa je lahko tudi na robu domene $\Theta$. Če razumemo izraz $0^0$ kot $\lim_{x \downarrow 0}x^x = 1$, nam robne točke ne bodo povzročale težav. Tedaj je torej 
 \[
     \sup_{\bm{p} \in \Theta} L(\bm{p}; \bm{x}) = 
     \prod_{i = 1}^n \binom{m_i}{x_i} \left(\frac{x_i}{m_i}\right)^{x_i} \left(\frac{m_i - x_i}{m_i}\right)^{m_i - x_i}.
@@ -310,7 +310,7 @@ Nazadnje je razmerje verjetji
     \left(\frac{m_j}{x_j} \frac{\sumin x_i}{\sumin m_i}\right)^{x_j}
     \left(\frac{m_j}{m_j - x_j}\frac{\sumin(m_i - x_i)}{\sumin m_i}\right)^{m_j - x_j}.
 \end{align*}
-Porazdelitev te testne statistike je povsem neočitna in izkaže se, da si ne moremo niti pomagati z Wilksovim izrekom, zato izberemo drugačno pot. Simuliramo veliko število testne statistike, recimo $N = 10.000$ in potem na podlagi tega definiramo porazdelitev s pomočjo histograma. Realno os razdelimo na intervale širine 
+Porazdelitev te testne statistike je povsem neočitna in izkaže se, da si ne moremo niti pomagati z Wilksovim izrekom, zato izberemo drugačno pot. Simuliramo veliko vzorcev, recimo $N = 10.000$, iz porazdelitve pod ničelno hipotezo, na njih izvrednotimo testno statistiko, in potem na podlagi tega definiramo porazdelitev s pomočjo histograma. Realno os razdelimo na intervale širine 
 \[
     \delta = \hat{\sigma} \sqrt[3]{\frac{24\sqrt{\pi}}{N}} \quad \text{ po Scottovem pravilu},
 \]  
@@ -318,10 +318,12 @@ nato pa preštejemo koliko simuliranih testnih statistik pade v dani interval ($
 \[
     \prob(\Lambda \in [\delta k, \delta(k+1))) := \frac{\text{\# simuliranih podatkov, ki pade v $[\delta k, \delta(k+1))$}}{N}
 \]
-za poljuben $k \in \Z$. Na podlagi tako definirane porazdelitve slučajne spremenljivke $\Lambda$, lahko izračunamo $p$-vrednost testne statistike $\lambda_{stat}$ našega vzorca kot
+za poljuben $k \in \Z$. Na podlagi tako definirane porazdelitve slučajne spremenljivke $\Lambda$, lahko izračunamo $p$-vrednost\footnote{$p$-vrednost opažanja je najmanjša možna meja pri kateri ničelno hipotezo zavrnemo z vsaj tolikšnjo stopnjo tveganja.} našega vzorca kot
 \[
-    p = \prob(\left\lvert \Lambda \right\rvert \geq \lambda_{stat}) = \prob(\Lambda \leq \lambda_{stat}) + \prob(\Lambda \geq \lambda_{stat}). 
+    p = \prob(\left\lvert \Lambda \right\rvert \geq \lambda_{stat}) = \prob(\Lambda \leq \lambda_{stat}) + \prob(\Lambda \geq \lambda_{stat})
 \]
+in ničelno domnevo pri stopnji tveganja $\alpha$ zavrnemo, če je $p < \alpha$.
+\newline
 
 \noindent
 \textbf{d) } V zadnji točki te naloge uporabimo metodo \emph{bootstrap} kjer simuliramo $10.000$ vrednosti testne statistike $\Lambda$ pod ničelno domnevo, da naš vzorec sestavlja $280$ binomsko $\bin(5, \hat{p})$ porazdeljenih neodvisnih opažanj $X_i \sim \bin(5, \hat{p})$. Ob tem je $\hat{p} = \olsi{X}/5$ cenilka za $p$ po metodi največjega verjetja iz točke a). Glede na takšen vzorec se naša testna statistika poenostavi v 
@@ -330,7 +332,7 @@ za poljuben $k \in \Z$. Na podlagi tako definirane porazdelitve slučajne spreme
 \]
 kjer je $\olsi{X} = \sumin X_i/n$ vzorčno povprečje. Na našem vzorcu testna statistika zavzame vrednost $\lambda_{stat} = 3,02 \cdot 10^{-97}$.
 
-Test pokaže, da so prav vse vrednosti testne statistike na $10.000$ simuliranih vzorcih vedno večje od $\lambda_{stat}$ izračunane na naših konkretnih podatkih, torej bomo ničelno hipotezo, da imajo vse palice zlome porazdeljene binomsko z enakimi parametri, s $p$-vrednostjo $0$ zavrgli.
+Test pokaže, da so prav vse vrednosti testne statistike na $10.000$ simuliranih vzorcih vedno večje od statistike $\lambda_{stat}$ izračunane na naših konkretnih podatkih, torej bomo ničelno hipotezo, da imajo vse palice zlome porazdeljene binomsko z enakimi parametri, s $p$-vrednostjo $0$ zavrgli.
 
 Skripto, ki spada k tej nalogi, najdemo v datoteki \texttt{naloga\_2.ipynb}.
 
@@ -355,7 +357,7 @@ Razlog za tem pojasni veliko odstopanje varianc po skupinah. Če namreč označi
 \[
     s_1^2 = \frac{1}{n_1 - 1}\sum_{i = 1}^{n_1} (X_{1i} - \bar{X_1})^2
 \]
-nepristransko cenilko variance povprečne spremembe pulza v skupini študentov z obremenitvijo in podobno definiramo $s_2^2$, potem vidimo, da je na naših podatkih $s_1 > 2s_2$. Pri tem je $n_1 = 46$ študentov bilo deležnih fizične obremenitve, $n_2 = 63$ pa je bilo študentov brez obremenitve. 
+nepristransko cenilko variance povprečne spremembe pulza v skupini študentov z obremenitvijo in podobno definiramo $s_2^2$ -- nepristransko cenilko variance povprečne spremembe pulza v skupini študentov, ki niso izvajali obremenitve, potem vidimo, da je na naših podatkih $s_1 > 2s_2$. Pri tem je $n_1 = 46$ študentov bilo deležnih fizične obremenitve, $n_2 = 63$ pa je bilo študentov brez obremenitve. 
 
 Pri Welchevem $t$-testu je testna statistika podana kot
 \[
@@ -368,7 +370,7 @@ Ta statistika je aproksimirana s Studentovo $t$-porazdelitvijo s približno
 \]
 prostostnimi stopnjami. To je Welch-Satterthwaitova enačba. Podobna je parametru, ki ga uporabljamo pri ocenjevanju vzorčnega povprečja pri stratificiranem vzorčenju, kjer ne poznamo stratumskih varianc (če sta stratuma samo dva). Podrobnosti o Welchevem $t$-testu najdemo v \cite{Welch} ali \cite[\S11]{Rice}.
 
-Ker zdaj (vsaj približno) poznamo porazdelitev testne statistike, jo lahko izvrednotimo na naših podatkih in tako izračunamo $p$-vrednost\footnote{$p$-vrednost opažanja je najmanjša možna meja pri kateri ničelno hipotezo zavrnemo z vsaj tolikšnjo stopnjo tveganja.} našega opažanja, ki nam pove kako ekstremno je. Naš test bo obojestranski, torej izračunamo $p$-vrednost kot
+Ker zdaj (vsaj približno) poznamo porazdelitev testne statistike, jo lahko izvrednotimo na naših podatkih in tako izračunamo $p$-vrednost našega opažanja, ki nam pove kako ekstremno je. Naš test bo obojestranski, torej izračunamo $p$-vrednost kot
 \begin{multline*}
     p = \prob(\lvert T \rvert \geq t_{stat}) = 
     \prob(T \leq -t_{stat}) + \prob(T \geq t_{stat}) \\ = 
@@ -379,7 +381,7 @@ kjer je $t_{stat}$ vrednost statistične spremenljivke na naših podatkih, $T \s
 \newline
 
 \noindent
-\textbf{b)} Empirično bi lahko  iz grafikona \ref{Sprememba pulza v odvisnosti od prvo izmerjenega pulza} sklepali, da študentje izbrani za obrmeneitev niso goljufali s tem, da niso tekli. Vsi, ki so imeli majhno spremembo pulza (recimo manj kot 30) bodisi vadijo veliko in imajo natrenirano srce, ali pa so že prvo meritev opravili z neobičajno visokim pulzom in se jim zaradi tega ni mogel med obremenitvijo drastično dvigniti. Mogoče so hiteli na testiranje, ker so zamujali, in so zaradi tega že imeli povišan pulz ob prvem merjenju.
+\textbf{b)} Empirično bi lahko  iz grafikona \ref{Sprememba pulza v odvisnosti od prvo izmerjenega pulza} sklepali, da študentje izbrani za obrmeneitev niso goljufali s tem, da niso tekli. Vsi, ki so imeli majhno spremembo pulza (recimo manj kot $20$) bodisi vadijo veliko in imajo natrenirano srce, ali pa so že prvo meritev opravili z neobičajno visokim pulzom in se jim zaradi tega ni mogel med obremenitvijo drastično dvigniti. Mogoče so hiteli na testiranje, ker so zamujali, in so zaradi tega že imeli povišan pulz ob prvem merjenju.
 
 \begin{figure}[h]
     \begin{center}
@@ -392,10 +394,10 @@ kjer je $t_{stat}$ vrednost statistične spremenljivke na naših podatkih, $T \s
 \end{figure}
 
 \noindent
-\textbf{c)} Najprej testirajmo, če so vzorčne variance vseh treh skupin enake -- homoskedastičnost (homogenost variance). V primeru da so, bomo uporabili analizo variance -- krajše ANOVA -- za preizkušanje domneve ali so povprečja po skupinah enaka. 
+\textbf{c)} Najprej testirajmo, če so vzorčne variance vseh treh skupin ne razlikujejo signifikantno (testiramo homogenost variance). V tem primeru, bomo uporabili analizo variance -- krajše ANOVA -- za preizkušanje ničelne domneve, da so vsa povprečja enaka, proti alternativni domnevi, da vsaj eno povprečje signifikantno odstopa od ostalih.
 \newline
 
-Homogenost variance bomo testirali z Levenovim testom, ki je v resnici zgolj modifikacija testa ANOVA, zato si najprej poglejmo kako deluje ta. Glavni cilj analize variance je ugotoviti ali se povprečja po skupinah med sabo statistično razlikujejo ali ne. Recimo, da imamo danih $n$ vzorecev $Y_{ij}$, za $1 \leq j \leq n_i$, $1 \leq i \leq k$ razdeljenih na $k$ skupin, kjer vsaka skupina vsebuje $n_i$ vzorcev. Z $\ols{Y}_{i\cdot}$ označimo povprečje znotraj $i$-te skupine, $\ols{Y}$ pa naj bo vzorčno povprečje vseh podatkov. Osnovna ideja tega testa bo pogledati razmerje variabilnosti vzorca med skupinami in variabilnosti vzorca v skupinah samih. Natančneje definirajmo 
+Homogenost variance bomo testirali z Levenovim testom, ki je v resnici zgolj modifikacija testa ANOVA, zato si najprej poglejmo kako deluje ta. Glavni cilj analize variance je ugotoviti ali se povprečja po skupinah med sabo signifikantno razlikujejo ali ne. Recimo, da imamo danih $n$ vzorecev $Y_{ij}$, za $1 \leq j \leq n_i$, $1 \leq i \leq k$ razdeljenih na $k$ skupin, kjer vsaka skupina vsebuje $n_i$ vzorcev. Z $\ols{Y}_{i\cdot}$ označimo povprečje znotraj $i$-te skupine, $\ols{Y}$ pa naj bo vzorčno povprečje vseh podatkov. Osnovna ideja tega testa bo pogledati razmerje variabilnosti vzorca med skupinami in variabilnosti vzorca v skupinah samih. Natančneje definirajmo 
 \[
     \sigma^2_B = \sum_{i = 1}^k \frac{n_i (\ols{Y}_{i \cdot} - \ols{Y})^2}{k-1},
 \]
@@ -407,7 +409,7 @@ ki se imenuje \emph{nepojasnjena varianca} -- varianca znotraj skupin vzorca. Te
 \[
     F = \frac{\sigma^2_B}{\sigma^2_W}.
 \]  
-Izkaže se, da sta pojasnjena in nepojasnjena varianca hi kvadrat porazdeljeni in sicer je $(k-1)\sigma^2_B \sim \chi^2(k - 1)$ ter $(n-k)\sigma^2_W \sim \chi^2(n - k)$. Tako spoznamo novo porazdelitev imenovano \emph{$F$-porazdelitev s parametroma $d_1$ in $d_2$}, ki je definirana kot porazdelitev spremenljivke
+Izkaže se, da sta pojasnjena in nepojasnjena varianca hi kvadrat porazdeljeni in sicer je $(k-1)\sigma^2_B \sim \chi^2(k - 1)$ ter $(n-k)\sigma^2_W \sim \chi^2(n - k)$. Tako spoznamo novo porazdelitev imenovano \emph{$F$-porazdelitev s parametroma $d_1$ in $d_2$}, ki je definirana kot porazdelitev slučajne spremenljivke
 \[
     \frac{U_1/d_1}{U_2/d_2} \sim F(d_1, d_2),
 \] 
@@ -418,7 +420,6 @@ kjer sta $U_1 \sim \chi^2(d_1)$ in $U_2 \sim \chi^2(d_2)$ neodvisni. Ničelno hi
 kjer je $F \sim F(k - 1, n - k)$, $F_{F(k-1, n - k)}$ kumulativna porazdelitvena funkcija te spremenljivke, $f_{stat}$ pa vrednost statistične spremenljivke izračunane na našem vzorcu, manjša od zadane stopnje tveganja $\alpha$.
 
 
-
 Omenili smo že, da je Levenov test zgolj prilagojena različica tega testa in sicer spremenljivke $\ols{Y}_{ij}$ zamenjamo z $Z_{ij} = \lvert Y_{ij} - \ols{Y}_{i \cdot}\rvert$. Tako dobimo testno statistiko 
 \[
     W = \frac{n - k}{k - 1} \cdot \frac{\sum_{i = 1}^k n_i (\olsi{Z}_{i \cdot} - \olsi{Z})^2}{\sum_{i = 1}^k \sum_{j = 1}^{n_i} (Z_{ij} - \ols{Z}_{i \cdot})^2},
@@ -426,7 +427,7 @@ Omenili smo že, da je Levenov test zgolj prilagojena različica tega testa in s
 ki je $F(k - 1, n - k)$-porazdeljena. V enačbi $\olsi{Z}_{i \cdot}$ predstavlja povprečje spremenljivk $Z_{ij}$ v $i$-ti skupini, $\olsi{Z}$ pa je povprečje vseh $Z_{ij}$.
 \newline
 
-S $p$-vrednostjo $0,660$, lahko po Levenovem testu sklepamo, da imajo tri skupine študentov z obremenitvijo glede na to koliko vadijo približno enake variance spremembe pulza. Z drugimi besedami je sprememba pulza v vseh treh skupinah približno enako razpršena okrog povprečja, kot lahko empirično do neke mere potrdimo iz grafikona \ref{Razprsenost spremembe pulza po skupinah glede na vadbo}.
+S $p$-vrednostjo $0,660$, lahko po Levenovem testu sklepamo, da imajo tri skupine študentov z obremenitvijo glede na to koliko vadijo nesignifikantno različne variance spremembe pulza. Z drugimi besedami je sprememba pulza v vseh treh skupinah približno enako razpršena okrog povprečja, kot lahko empirično do neke mere potrdimo iz grafikona \ref{Razprsenost spremembe pulza po skupinah glede na vadbo}.
 
 \begin{figure}[h]
     \begin{center}
@@ -446,8 +447,8 @@ H_0: \text{vadba nima vpliva na spremembo pulza}.
 Z drugimi besedami, bi bilo smiselno za ničelno hipotezo vzeti $H_0 : \mu_1 = \mu_2 = \mu_3$, kjer so $\mu_1, \mu_2, \mu_3$ povprečja splošnih študentov, ki vadijo veliko, zmerno oziroma malo ali skoraj nič. To hipotezo bomo testirali z analizo variance. Ta test prepostavlja naslednje:
 \begin{itemize}
     \item Ekspirimentalna napaka pri merjenju podatkov je približno normalno porazdeljena (to bomo privzeli).
-    \item Homogenost variance (to nam je potrdil Levenov test zgoraj)
-    \item Posamezne enote vzorca so neodvisne drug od druge (tudi to bomo privzeli) 
+    \item Homogenost variance (to nam je potrdil Levenov test zgoraj).
+    \item Posamezne enote vzorca so neodvisne drug od druge (tudi to bomo privzeli).
 \end{itemize}
 
 Vidimo, da je $p$-vrednost $0,907$ precej velika, kar pomeni, da bi vsaj tako ekstremen rezulat, kot je naš, dobili dokaj pogosto -- naš vzorec torej ni preveč ekstremen. Na podlagi tega testa lahko tako statistično sklepamo, da je ničelna hipoteza resnična, kar pomeni, da vadba nima vpliva na spremembo pulza pri študentih z obrmenitvijo.
