@@ -201,7 +201,7 @@ kjer je slučajna spremenljivka $X$ porazdeljena binomsko $\bin(5,p)$. \emph{Ver
 \[
     L(p; x_1, \ldots, x_n) = \prod_{i = 1}^n L_1(p; x) = \prod_{i = 1}^n \binom{5}{x_i}p^{x_i}(1-p)^{5 - x_i}.
 \]
-Cenilka za $p$ po metodi največjega verjetja bo torej tisti parameter, pri katerem je verjetje maksimalno. Ker je verjertje gladko odvisno od parametra $p \in (0,1)$ bomo ta ekstrem poiskali z odvodom, da bo računanje lažje, pa si bomo pomagali z logaritmom verjetja
+Cenilka za $p$ po metodi največjega verjetja bo torej tisti parameter, pri katerem je verjetje maksimalno. Ker je verjetje gladko odvisno od parametra $p \in (0,1)$ bomo ta ekstrem poiskali z odvodom, da bo računanje lažje, pa si bomo pomagali z logaritmom verjetja
 \begin{multline*}
     \ell(p; x_1, \ldots, x_n) := 
     \log L(p; x_1, \ldots, x_n) \\ 
@@ -258,13 +258,13 @@ Porazdeljena je s porazdelitvijo hi kvadrat z dvema prostostnima stopnjama, saj 
 \\
 
 \noindent
-\textbf{c)} Denimo, da imamo podanih $n$ neodvisnih opažanj $X_i \sim \bin(m_i, p_i)$ z znanimi parametri $m_i$ in neznanimi $p_i$. Ogledali si bomo kako s pomočjo razmerja verjetji preizkusimo ničelno domnevo, da so vsi parametri $p_i$ enaki proti alternativni domnevi, da temu ni tako. 
+\textbf{c)} Denimo, da imamo podanih $n$ neodvisnih opažanj $X_i \sim \bin(m_i, p_i)$ z znanimi parametri $m_i$ in neznanimi $p_i$. Ogledali si bomo kako s pomočjo razmerja verjetij preizkusimo ničelno domnevo, da so vsi parametri $p_i$ enaki proti alternativni domnevi, da temu ni tako. 
 
 Naj bo \emph{funkcija verjetja} ali samo \emph{verjetje}
 \[
     L(p_1, \ldots, p_n; x_1, \ldots, x_n)  = \prod_{i = 1}^n \binom{m_i}{x_i}p_i^{x_i} (1 - p_i)^{m_i - x_i}. 
 \]
-Naj bosta $\Theta = (0,1)^n$ in $\Theta_0 = \{(p_1, \ldots, p_n) \in \Theta \mid p_1 = \dots = p_n\}$. Zanima nas razmerje verjertji
+Naj bosta $\Theta = (0,1)^n$ in $\Theta_0 = \{(p_1, \ldots, p_n) \in \Theta \mid p_1 = \dots = p_n\}$. Zanima nas razmerje verjetij
 \[
     \Lambda = \frac{\sup_{\bm{p} \in \Theta_0} L(\bm{p}; \bm{x})}{\sup_{\bm{p} \in \Theta} L(\bm{p}; \bm{x})},   
 \]
@@ -276,7 +276,7 @@ za poljuben $\bm{x} \in \prod_{i = 1}^n\{0,1,\ldots, m_i\}$, kjer imamo krajše 
 \end{multline*}
 logaritem verjetja.
 
-Lotimo se najprej računanja imenovalca razmerja verjetji $\sup_{\bm{p} \in \Theta} L(\bm{p}; \bm{x})$. Ker je verjetje gladko odvisna funkcija parametra $\bm{p} \in \Theta \subseteq \R^n$, bo maksimum zavzela v stacionarni točki, kar pomeni, da bomo iskali ničle vseh pracialnih odvodov logaritma verjetja $\ell$, saj bo tako računanje lažje. Vidimo, da velja
+Lotimo se najprej računanja imenovalca razmerja verjetij $\sup_{\bm{p} \in \Theta} L(\bm{p}; \bm{x})$. Ker je verjetje gladko odvisna funkcija parametra $\bm{p} \in \Theta \subseteq \R^n$, bo maksimum zavzela v stacionarni točki, kar pomeni, da bomo iskali ničle vseh pracialnih odvodov logaritma verjetja $\ell$, saj bo tako računanje lažje. Vidimo, da velja
 \[
     \pdv{\ell}{p_j} (\bm{p}; \bm{x}) = 
     \frac{x_j}{p_j} - \frac{m_i - x_i}{m_i - p_i} = 
@@ -301,7 +301,7 @@ kar ima ničlo natanko pri $p = \sumin x_i / \sumin m_i$. Prepričamo se lahko, 
     \prod_{j = 1}^n \binom{m_j}{x_j} \left(\frac{\sumin x_i}{\sumin m_i}\right)^{x_j} \left(\frac{\sumin(m_i - x_i)}{\sumin m_i}\right)^{m_j - x_j}.
 \]
 
-Nazadnje je razmerje verjetji
+Nazadnje je razmerje verjetij
 \begin{align*}
     \Lambda &= 
     \frac{\sup_{\bm{p} \in \Theta_0} L(\bm{p}; \bm{x})}{\sup_{\bm{p} \in \Theta} L(\bm{p}; \bm{x})}  \\ 
